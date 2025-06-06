@@ -1,6 +1,10 @@
+import Slinder from "./components/Slinder/Slinder"
+
 const HomePage = () => {
   return (
-    <div className=''>HomePage</div>
+    <div className=''>
+      <Slinder/>
+    </div>
   )
 }
 
