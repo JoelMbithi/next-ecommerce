@@ -11,7 +11,7 @@ const HomePage = () => {
       <h1 className='text-3xl font-bold mb-8'>Featured Products</h1>
        <ProductList/>
     </div>
-    <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-32">
+    <div className="mt-24 p-2">
       <h1 className='text-3xl font-bold mb-8'>Products Category</h1>
        <Category/>
     </div>
