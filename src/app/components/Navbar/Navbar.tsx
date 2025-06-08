@@ -8,8 +8,8 @@ import Image from 'next/image'
 
 const Navbar = () => {
   return (
-    <div className=' relative h-15 top-3 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 '>
-      <div className='h-full flex items-center justify-between md:hidden'>
+    <div className='  h-15 top-0 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 sticky z-50  backdrop-blur-md'>
+      <div className='h-full flex items-center justify-between md:hidden '>
         {/* mobile */}
       
       <Link href='/' className='text-2xl tracking-wide'>
@@ -35,7 +35,7 @@ const Navbar = () => {
          </div>
          {/* links */}
             <div className='hidden xl:flex     gap-4'>
-              <Link href="">Home</Link>
+              <Link href="/">Home</Link>
           <Link href="/list">Shop</Link>
          
           <Link href="/about">About</Link>

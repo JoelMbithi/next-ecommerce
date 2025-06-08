@@ -44,8 +44,8 @@ const Icons = () => {
             <img src='/notification.png' alt='notification' width={24} height={24} />
             </div>
             <div className='cursor-pointer'>
-            <img onClick={handleCart} src='/cart.png' alt='profile' width={24} height={24} />
-            <div className='absolute -top-4  -right-4 w-6 h-6 bg-red-500 rounded-full text-white text-sm flex items-center justify-center'>2</div>
+            <img onClick={handleCart} src='/cart.png' alt='profile' width={20} height={20} />
+            <div className='absolute -top-2  -right-3 w-4 h-4 bg-red-500 rounded-full text-white text-sm flex items-center justify-center'>2</div>
             {isOpenCart && (
                
                  <CaortModal/>

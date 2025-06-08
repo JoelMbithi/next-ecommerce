@@ -94,7 +94,7 @@ const Footer = () => {
       </div>
      </div>
      {/* BOTTOM */}
-     <div className='w-full  flex flex-col md:flex-row justify-between'>
+     <div className='w-full  flex flex-col md:flex-row justify-between gap-8 mt-16'>
       <span className='text-sm text-slate-600'>&copy; 2025 Joe Shop</span>
       <div className='mt-4 flex gap-4 justify-between'>
         <h1 className='text-slate-500'>Language</h1>
