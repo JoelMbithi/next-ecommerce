@@ -19,9 +19,9 @@ app.use(cors({
 app.use(express.json())
 
 app.listen(PORT, () => {
-<<<<<<< HEAD
-    console.log(`Server is running on well ${PORT}`)
-=======
-    console.log(`Server is running on well on ${PORT}`)
->>>>>>> joe
+
+    console.log(`Server is running  ${PORT}`)
+
+    
+
 })
