@@ -4,6 +4,7 @@ import cors from 'cors'
 import db from '../Backend/utils/db.js'
 import productCategoryRouter from '../Backend/Routes/ProductCategory/categoryRoutes.js'
 import productRouter from '../Backend/Routes/ProductCategory/ProductRoutes.js'
+import productItemRouter from "../Backend/Routes/ProductCategory/ProductItem.js"
 
 
 /* load enviroment variable */
@@ -24,6 +25,7 @@ app.use(express.json())
 
 app.use('/api/ProductCategory',productCategoryRouter)
 app.use("/api/product",productRouter)
+app.use('/api/productItem',productItemRouter)
 
 app.listen(PORT, () => {
 
