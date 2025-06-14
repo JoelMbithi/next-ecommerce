@@ -1,6 +1,10 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
+import db from '../Backend/utils/db.js'
+import productCategoryRouter from '../Backend/Routes/ProductCategory/categoryRoutes.js'
+import productRouter from '../Backend/Routes/ProductCategory/ProductRoutes.js'
+
 
 /* load enviroment variable */
 dotenv.config()
@@ -17,6 +21,9 @@ app.use(cors({
 }))
 
 app.use(express.json())
+
+app.use('/api/ProductCategory',productCategoryRouter)
+app.use("/api/product",productRouter)
 
 app.listen(PORT, () => {
 

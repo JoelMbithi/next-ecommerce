@@ -1,8 +1,11 @@
 import pkg from 'pg'
-import dotenv from 'dotenv'
+import "dotenv/config"
 
-const {Client} = pkg 
-dotenv.config()
+
+
+const {Client} = pkg ;
+
+
 
 
 const db = new Client ({
@@ -15,7 +18,7 @@ const db = new Client ({
 })
 
 db.connect()
-.then (() => console.log(`PostgresSQL Connect`))
+.then (() => console.log('PostgresSQL Connect'))
 .catch((error) => console.log("Connection Error",
 error.stack))
 
