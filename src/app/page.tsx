@@ -1,10 +1,14 @@
+"use client";
 
 import Category from "./components/Product/Category"
 import ProductList from "./components/Product/ProductList"
 import Slinder from "./components/Slinder/Slinder"
 import List from "./list/page"
 
+
 const HomePage = () => {
+
+
   return (
     <div className=''>
       <Slinder/>
