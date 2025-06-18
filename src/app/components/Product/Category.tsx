@@ -82,7 +82,7 @@ const Category = () => {
 
             <div className="flex justify-between items-center mt-4">
               <span className="font-semibold text-lg text-blue-600">
-                ${product.sell_price || '63.89'}
+                ${product.variants[0]?.sell_price || '63.89'}
               </span>
               <button className="px-4 py-1 ring-1 text-red-400 rounded-full hover:bg-red-500 hover:text-white transition duration-300">
                 Add to Cart
