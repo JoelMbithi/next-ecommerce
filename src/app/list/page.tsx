@@ -8,10 +8,6 @@ import ProductList from '../components/Product/ProductList'
 
 const List = () => {
   const router = useRouter()
-  const handleOpen = (e: React.MouseEvent) => {
-     e.preventDefault()
-     router.push('/ProductImages')
-  }
 
   return (
     <div className='px-4 py-8 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative'>
@@ -21,7 +17,10 @@ const List = () => {
           <h1 className='text-4xl font-semibold leading-[48px] text-gray-700'>
             Grab up to 50% off on <br />Selected Products
           </h1>
-          <button className='rounded-3xl bg-red-400 text-white w-max py-3 px-5 text-sm'>
+          <button 
+            onClick={() => router.push('/ProductImages')}
+            className='rounded-3xl bg-red-400 text-white w-max py-3 px-5 text-sm'
+          >
             Buy Now
           </button>
         </div>
@@ -37,13 +36,18 @@ const List = () => {
         <Filter />
       </div>
 
-      {/* Single Page Link */}
-      <h1
-        onClick={handleOpen}
-        className='cursor-pointer text-blue-500 hover:underline mt-6'
+      {/* Product List - No wrapping h1 tag */}
+      <div className="mt-6">
+        <ProductList />
+      </div>
+
+      {/* Optional "View All" link */}
+      <button
+        onClick={() => router.push('/ProductImages')}
+        className='mt-4 text-blue-500 hover:underline'
       >
-       <ProductList/>
-      </h1>
+        View All Products
+      </button>
     </div>
   )
 }

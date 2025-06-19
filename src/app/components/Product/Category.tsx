@@ -26,7 +26,7 @@ const Category = () => {
     try {
       const res = await newRequest.get('/product/getAllProduct')
       setProduct(res.data.data)
-      console.log(res.data.data)
+     /*  console.log(res.data.data) */
     } catch (error) {
       console.log("Error")
     }
@@ -55,6 +55,7 @@ const Category = () => {
     fill
     sizes="25vw"
   />
+  
 
   {/* Second image (on hover) */}
   <Image
