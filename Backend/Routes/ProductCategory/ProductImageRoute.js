@@ -9,7 +9,7 @@ import {
 
 const router = express.Router();
 
-router.post("/", createImage);
+router.post("/allCategory", createImage);
 router.get("/", getAllImages);
 router.get("/:id", getImageById);
 router.put("/:id", updateImage);

@@ -62,23 +62,38 @@ export const createProductCategory = async (req,res) => {
 
 /* All product */
 
-export const allProductsCategory = async (req,res) =>{
-    try {
-        const productCategory = await db.query(
-            `SELECT * FROM product_category `
-        )
-        res.status(200).json({
-            status:"success",
-            message:"Successful retrieved all productCategory",
-            data:productCategory.rows
-        })
-    } catch (error) {
-        console.log("Error When Getting All Product")
-        res.status(500).json({
-            message:"Failed to get All Product"
-        })
-    }
-}
+export const allProductsCategory = async (req, res) => {
+  try {
+    const productCategory = await db.query(
+      `SELECT 
+        pc.*, 
+        p.product_id, 
+        p.product_name, 
+        pi.original_price,
+        pi.sell_price
+      FROM product_category pc
+      JOIN product p 
+      ON pc.product_category_id = p.product_category_id
+
+      JOIN product_items pi
+      ON  p.product_id = pi.product_id
+      ORDER BY pc.product_category_id;`
+    );
+
+    res.status(200).json({
+      status: "success",
+      message: "Successfully retrieved all productCategory",
+      data: productCategory.rows
+    });
+  } catch (error) {
+    console.error("🔥 Error When Getting All Product:", error); // 👈 Important
+    res.status(500).json({
+      status: "error",
+      message: "Failed to get All Product"
+    });
+  }
+};
+
 
 /* Update a product */
 
