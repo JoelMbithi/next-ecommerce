@@ -6,6 +6,8 @@ import productCategoryRouter from '../Backend/Routes/ProductCategory/categoryRou
 import productRouter from '../Backend/Routes/ProductCategory/ProductRoutes.js'
 import productItemRouter from "../Backend/Routes/ProductCategory/ProductItem.js"
 import ProductImageRouter from '../Backend/Routes/ProductCategory/ProductImageRoute.js'
+import registerRoute from './Routes/AuthRoutes/RegisterRoutes.js'
+import userRoute from './Routes/AuthRoutes/UserRoutes.js'
 
 
 /* load enviroment variable */
@@ -28,6 +30,9 @@ app.use('/api/ProductCategory',productCategoryRouter)
 app.use("/api/product",productRouter)
 app.use('/api/productItem',productItemRouter)
 app.use('/api/productImage',ProductImageRouter)
+app.use('/api/register',registerRoute)
+app.use('/api/user',userRoute)
+
 app.listen(PORT, () => {
 
     console.log(`Server is running  ${PORT}`)
