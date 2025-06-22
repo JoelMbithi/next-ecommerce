@@ -4,6 +4,6 @@ import { login, register } from '../../Controllers/AuthController/RegisterContro
 const router = express.Router()
 
 router.post('/create',register)
-router.get('/login',login)
+router.post('/login',login)
 
 export default router

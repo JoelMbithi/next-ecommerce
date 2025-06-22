@@ -3,32 +3,31 @@ import db from '../../utils/db.js'
 
 //get single User
 
-export const singleUser = async (req,res) => {
-const {user_id} = req.params
-try {
-     const user = await db.query(
-        `SELECT * FROM users WHERE user_id = $1`,
-        [user_id]
-    )
-    //check if user exist
-    if(user.rows.length === 0){
-        return res.status(403).json({
-            status:"error",
-            message:"user does not exist"
-        })
+export const singleUser = async (req, res) => {
+  const { user_id } = req.params;
+  try {
+    const user = await db.query(
+      `SELECT * FROM users WHERE user_id = $1`,
+      [user_id]
+    );
+    if (user.rows.length === 0) {
+      return res.status(403).json({
+        status: "error",
+        message: "user does not exist"
+      });
     }
-   
 
     res.status(200).json({
-        status:"success",
-        message:"Successful retrieved user",
-        data:user.rows[0]
-    })
-} catch (error) {
-    console.log("failed to get ")
-}
+      status: "success",
+      message: "Successfully retrieved user",
+      data: user.rows[0]
+    });
+  } catch (error) {
+    console.log("failed to get user", error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
 
-}
 
 //getAll user
 
