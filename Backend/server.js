@@ -8,6 +8,7 @@ import productItemRouter from "../Backend/Routes/ProductCategory/ProductItem.js"
 import ProductImageRouter from '../Backend/Routes/ProductCategory/ProductImageRoute.js'
 import registerRoute from './Routes/AuthRoutes/RegisterRoutes.js'
 import userRoute from './Routes/AuthRoutes/UserRoutes.js'
+import cartRouter from './Routes/CartRoute/CartRoute.js'
 
 
 /* load enviroment variable */
@@ -32,6 +33,7 @@ app.use('/api/productItem',productItemRouter)
 app.use('/api/productImage',ProductImageRouter)
 app.use('/api/register',registerRoute)
 app.use('/api/user',userRoute)
+app.use('/api/cart',cartRouter)
 
 app.listen(PORT, () => {
 
